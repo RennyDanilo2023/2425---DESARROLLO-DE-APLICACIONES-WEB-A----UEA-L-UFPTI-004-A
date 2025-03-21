@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Datos Guardados{% endblock %}
+
+{% block content %}
+<h2>Datos Guardados</h2>
+
+<h3>Desde TXT:</h3>
+<ul>
+    {% for linea in datos_txt %}
+        <li>{{ linea }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Desde JSON:</h3>
+<ul>
+    {% for item in datos_json %}
+        <li>Nombre: {{ item.nombre }}, Edad: {{ item.edad }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Desde CSV:</h3>
+<ul>
+    {% for fila in datos_csv %}
+        <li>{{ fila[0] }}, {{ fila[1] }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Desde SQLite:</h3>
+<ul>
+    {% for usuario in datos_sqlite %}
+        <li>Nombre: {{ usuario.nombre }}, Edad: {{ usuario.edad }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
