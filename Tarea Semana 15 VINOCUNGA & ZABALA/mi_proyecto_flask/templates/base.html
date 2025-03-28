@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Proyecto Flask{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('registro') }}">Registro</a>
+            <a href="{{ url_for('login') }}">Iniciar Sesión</a>
+            <a href="{{ url_for('about') }}">Acerca de</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('crear_producto') }}">Crear producto</a>
+                <a href="{{ url_for('listar_productos') }}">Ver productos</a>
+                <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <div style="font-size: 12px; color: gray; padding-left: 10px;">
+        Usuario autenticado: {{ current_user.is_authenticated }}
+    </div>
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <strong>Renny Danilo Vinocunga-Pillajo & Imelda Isabel Zabala Ztungui</strong><br>
+        Desarrollo de Aplicaciones Web (A) — Nivel 4<br>
+        Universidad Estatal Amazónica<br>
+        Código Postal: 160150
+    </footer>
+</body>
+</html>

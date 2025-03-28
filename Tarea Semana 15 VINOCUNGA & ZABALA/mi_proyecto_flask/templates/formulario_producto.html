@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Formulario de Producto{% endblock %}
+
+{% block content %}
+<h2>{{ producto and 'Editar' or 'Crear' }} Producto</h2>
+<form method="POST">
+    <p>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required value="{{ producto[1] if producto else '' }}">
+    </p>
+    <p>
+        <label>Precio:</label>
+        <input type="number" name="precio" step="0.01" required value="{{ producto[2] if producto else '' }}">
+    </p>
+    <p>
+        <label>Stock:</label>
+        <input type="number" name="stock" required value="{{ producto[3] if producto else '' }}">
+    </p>
+    <p><button type="submit">Guardar</button></p>
+</form>
+<a href="{{ url_for('listar_productos') }}">⬅ Volver a la lista</a>
+{% endblock %}

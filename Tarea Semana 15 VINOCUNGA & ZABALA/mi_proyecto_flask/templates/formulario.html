@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Formulario{% endblock %}
+
+{% block content %}
+<h2>Formulario</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <p>
+        <label for="nombre">{{ form.nombre.label }}</label>
+        {{ form.nombre(id="nombre") }}
+    </p>
+
+    <p>
+        <label for="mail">{{ form.mail.label }}</label>
+        {{ form.mail(id="mail") }}
+    </p>
+
+    <p>
+        <label for="edad">{{ form.edad.label }}</label>
+        {{ form.edad(id="edad") }}
+    </p>
+
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
+

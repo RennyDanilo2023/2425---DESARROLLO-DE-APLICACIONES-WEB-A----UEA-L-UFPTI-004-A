@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Cabecera */
+header {
+    background-color: #00a7c4;
+    padding: 10px 20px;
+    border-bottom: 4px solid #007d9c;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+    font-size: 1.2em;  /*tamaño*/
+}
+
+nav a:hover {
+    background-color: #008ba1;
+    border-radius: 4px;
+}
+
+/* Contenido centrado */
+main {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Formularios */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* Campos de entrada */
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botones */
+button,
+input[type="submit"],
+.action-btn {
+    padding: 8px 12px;
+    background-color: #00a7c4;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.action-btn:hover {
+    background-color: #008ba1;
+}
+
+/* Tabla */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #00a7c4;
+    color: white;
+}
+
+/* Estilo del enlace de creación */
+a.crear-producto-link {
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007d9c;
+}
+/* Tabla de productos */
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+/* Evita que el form cree un fondo o bloque adicional */
+.tabla-productos td form {
+    display: inline; /* Mismo comportamiento que un <a> */
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.tabla-productos th, .tabla-productos td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.tabla-productos th {
+    background-color: #009bb3;
+    color: white;
+    font-weight: bold;
+}
+
+.tabla-productos tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+/* Botones */
+.btn-azul {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.btn-azul:hover {
+    background-color: #0056b3;
+}
+
+.btn-rojo {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.btn-rojo:hover {
+    background-color: #a3001b;
+}
+
+/* Crear nuevo producto */
+.crear-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.crear-link a {
+    color: #6f00a8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.crear-link a:hover {
+    text-decoration: underline;
+}
+
+/* Formulario en línea */
+.form-inline {
+    display: inline;
+}
+.footer {
+    background-color: #00a7c4;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 1.1em;/* ta */
+    border-top: 4px solid #007d9c;
+    margin-top: 40px;
+    line-height: 1.6;
+}
+
+.footer strong {
+    font-size: 1em;
+}
